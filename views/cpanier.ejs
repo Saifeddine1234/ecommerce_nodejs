@@ -1,0 +1,59 @@
+<%-include('head.ejs')%>
+<body>
+    <div class="row d-flex justify-content-center">
+        <div class="col-mg-12">
+            <h2>Passer Commande</h2>
+            <br>
+            <%for(var errorr of messageserror){%>
+                <div class="alert alert-danger">
+                  <p><%=errorr%></p>
+                </div>
+        
+                <%}%>     
+            <form id="form" actio1n="/passerC" method="post">
+              <div> <h6>La commande contient <b style="color:cadetblue;"><%=quantite%> produits</b> il faut payer <b style="color:cadetblue;"><%=pt%> DT</b>  </h6></div>
+     
+              <div id="payment-errors" class="alert alert-danger d-none"></div>
+              <div class="form-group">
+            <label>Nom </label><br>
+            <input type="text" id="" name="nom" placeholder="entrer le nom" class="form-control" checked>
+        </div>
+        <div class="form-group">
+            <label>Adresse</label><br>
+            <input type="text" name="adresse" placeholder="entrer adresse " class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Nom de banque </label><br>
+            <input type="text" name="bank" placeholder="entrer le nom de banque" class="form-control" >
+        </div>
+        <div class="form-group">
+            <label>Numero de cart </label><br>
+            <input type="Number" id="card-number" name="numCart" placeholder="entrer le numer de cart" class="form-control">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                <label>annee d'expiration </label><br>
+                <input type="number" id="card-expiry-year" name="annee" placeholder="entrer l'annee" class="form-control">
+            </div></div>
+            <div class="col-md-6">
+                <div class="form-group">
+                <label>Mois d'expiration </label><br>
+                <input type="number" id="card-expiry-month" name="mois" placeholder="entrer le mois" class="form-control">
+            </div></div>
+        </div>
+        
+            <div class="form-group">
+            <label>CVC </label><br>
+            <input type="number" id="card-cvc" name="cvc" placeholder="entrer le CVC" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-dark" >Ok</button>
+        <a href="/panier" class="btn btn-dark">Retour</a>
+    </form>
+       </a>
+        
+        </div>
+    </div>
+      
+    </div>
+</body>
