@@ -1,0 +1,44 @@
+<%-include('head.ejs')%>
+
+<body>
+    <div class="container">
+        <h1 class="text-center ">Produits</h1>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center "></th>
+                    <th scope="col" class="text-center ">Nom </th>
+                    <th scope="col" class="text-center ">Prix</th>
+                    <th scope="col" class="text-center ">Information</th>
+                    <th scope="col" class="text-center ">Supprimer</th>
+                    <th scope="col" class="text-center ">Modifier</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% var index = 1%>
+                <% for(var i of produit){%>
+                <tr>
+                    <td class="text-center "><%=index++%></td>
+                    <td class="text-center "><%=i.nom%></td>
+                    <td class="text-center "><%=i.prix%> DT</td>
+                    <td class="text-center "> <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="text-center "><b>capacite : </b><%=i.information.capacite%> Go</td>
+                                <td class="text-center "><b>Sim :</b> <%=i.information.sim%></td>
+                                <td class="text-center "><b>RAM :</b> <%=i.information.ram%> Go</td>
+                                   </tr>
+                      </table></td>
+                      <td class="text-center "><a href="/a/supprimerpr/<%=i._id%>"><button class="btn btn-danger">Supprimer</button></a></td>
+                      <td class="text-center "><a href="/a/modifierpr/<%=i._id%>"><button class="btn btn-primary">Modifier</button></a></td>
+              
+
+                </tr>
+                <%}%>
+          </table>
+</div>
+<div class="text-center "><a href="/a/ajouterpr"><button class="btn btn-primary">Ajouter Produits</button></a> <a href="/a/admin"><button class="btn btn-secondary">Retour</button></a></div></div>
+
+</body>

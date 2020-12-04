@@ -1,0 +1,51 @@
+<%-include('head.ejs')%>
+
+<body>
+    <div class="container">
+        <h1 class="text-center ">Produits</h1>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center "></th>
+                    <th scope="col" class="text-center ">Nom </th>
+                    <th scope="col" class="text-center ">adresse</th>
+                    <th scope="col" class="text-center ">nom de cart </th>
+                    <th scope="col" class="text-center ">numero de cart </th>
+                    <th scope="col" class="text-center ">Date csv </th>
+                    <th scope="col" class="text-center ">Produits </th>
+                    <th scope="col" class="text-center ">Prix Total </th>
+                    <th scope="col" class="text-center ">Supprimer</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% var index = 1%>
+                <% for(var i of order){%>
+                <tr>
+                    <td class="text-center "><%=index++%></td>
+                    <td class="text-center "><%=i.nom%></td>
+                    <td class="text-center "><%=i.adresse%></td>
+                    <td class="text-center "><%=i.nomCart%></td>
+                    <td class="text-center "><%=i.numCart%></td>
+                      <td class="text-center "><%=i.mois%>/<%=i.annee%> <b>CVC</b><%=i.cvc%> </td>
+                    <td class="text-center "><table class="table table-bordered">
+                        <tbody>
+                            <% for(var x of i.cart.Produits){%>
+                            <tr>
+                                <td class="text-center "><%=x.nom%> </td>
+                                <td class="text-center "> <%=x.prix%> DT</td>
+                                   </tr>
+                                   <%}%>
+                      </table></td>
+                      <td class="text-center "><%=i.TotalPrix%> DT</td>
+                      <td class="text-center "><a href="/a/supprimercommande/<%=i._id%>"><button class="btn btn-danger">Supprimer</button></a></td>
+              
+
+                </tr>
+                <%}%>
+          </table>
+</div>
+<div class="text-center "><a href="/a/admin"><button class="btn btn-secondary">Retour</button></a></div></div>
+
+</body>

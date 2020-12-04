@@ -1,0 +1,42 @@
+<%-include('head.ejs')%>
+<body><form id="" class="" method="post" action="ajouterpr" style="margin-top: 30px;">
+    <div class="form-group">
+      <label for="UserName">Nom produit</label>
+      <input type="text" class="form-control" placeholder="saisir le Nom de produit" name="nomproduit">
+    </div>
+    <div class="form-group">
+      <label for="email">Prix de produit</label>
+      <input type="number" class="form-control" placeholder="saisir le Prix de produit" name="prixproduit">
+    </div>
+    <div class="form-group">
+      <label for="Contact">Url de produit</label>
+      <input type="text" class="form-control" placeholder="saisir le lien de l'image" name="urlproduit">
+    </div>
+    <div class="form-group">
+      <label for="Adress">Description</label>
+      <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="email">Capacité</label>
+                <input type="number" class="form-control" placeholder="Capacité (ex : 64)" name="capacite">
+            </div></div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="UserName">SIM</label>
+                <input type="text" class="form-control" placeholder="saisir sim" name="sim">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="UserName">RAM</label>
+                <input type="number" class="form-control" placeholder="saisir RAM (ex : 8)" name="ram">
+            </div>
+        </div>
+
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-success">Ajouter</button>
+      <a href="admin" class="btn btn-danger">Retour</a>
+    </div>
+  </form>
+  </body>

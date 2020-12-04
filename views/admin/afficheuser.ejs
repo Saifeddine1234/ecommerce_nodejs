@@ -1,0 +1,33 @@
+<%-include('head.ejs')%>
+
+<body>
+    <div class="container">
+        <h1 class="text-center ">Utilisateurs</h1>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center "></th>
+                    <th scope="col" class="text-center ">Email</th>
+                    <th scope="col" class="text-center ">Nom </th>
+                    <th scope="col" class="text-center ">numero</th>
+                    <th scope="col" class="text-center ">adresse</th>
+                    <th scope="col" class="text-center ">Supprimer</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% var index = 1%>
+                <% for(var i of user){%>
+                <tr>
+                    <td class="text-center "><%=index++%></td>
+                    <td class="text-center "><%=i.email%> </td>
+                    <td class="text-center "><%=i.userName%></td>
+                    <td class="text-center "><%=i.contact%></td>
+                    <td class="text-center "><%=i.address%> </td>
+                      <td class="text-center "><a href="/a/supprimeruser/<%=i._id%>"><button class="btn btn-danger">Supprimer</button></a></td>
+  </tr>
+                <%}%>
+          </table>
+          <div class="text-center "><a href="/a/admin"><button class="btn btn-secondary">Retour</button></a></div></div>
+</body>
